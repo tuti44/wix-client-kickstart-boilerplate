@@ -1,19 +1,26 @@
 define(['lodash',
         'React',
-        'components/component/component'
-      ],
+        'components/login/login',
+        'components/login/signup',
+        'components/login/home',
+        'ReactRouter'
+    ],
 
-    function (_, React) {
+    function (_, React, Login, Signup, Home, ReactRouter) {
         'use strict';
+        var Router = ReactRouter.Router;
+        var Route = ReactRouter.Route;
 
         return React.createClass({
             displayName: 'MainView',
 
             render: function () {
                 return (
-                    <div>
-                      <h1>Hello H1</h1>
-                    </div>
+                        <Router>
+                            <Route path="/" component={Login}/>
+                            <Route path="/sign-up" component={Signup}/>
+                            <Route path="/home" component={Home}/>
+                        </Router>
                 );
             }
         });

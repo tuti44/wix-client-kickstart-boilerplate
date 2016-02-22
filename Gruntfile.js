@@ -25,6 +25,14 @@ module.exports = function (grunt) {
             build: {
                 files: [
                     {
+                        src: 'src/img/*',
+                        dest: 'build/img/'
+                    },
+                    {
+                        src: 'src/css/main.css',
+                        dest: 'build/css/main.css'
+                    },
+                    {
                         src: 'node_modules/requirejs/require.js',
                         dest: VENDOR_TARGET + 'require.js'
                     },
@@ -37,8 +45,12 @@ module.exports = function (grunt) {
                         dest: VENDOR_TARGET + 'react-with-addons.js'
                     },
                     {
-                        src: 'node_modules/requirejs/require.js',
-                        dest: VENDOR_TARGET + 'require.js'
+                        src: 'node_modules/react-dom/dist/react-dom.js',
+                        dest: VENDOR_TARGET + 'react-dom.js'
+                    },
+                    {
+                        src: 'node_modules/react-router/dist/react-router.js',
+                        dest: VENDOR_TARGET + 'react-router.js'
                     },
                     {
                         expand: true,
@@ -103,6 +115,7 @@ module.exports = function (grunt) {
                 files: [
                     'src/**/*.css',
                     'src/**/*.jsx',
+                    'src/test/components/*.js',
                     'src/js/**/*.js',
                     '!src/js/components/**/*.js',
                     '!src/js/*.js',
